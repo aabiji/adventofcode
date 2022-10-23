@@ -1,0 +1,9 @@
+
+Day 1 -> Did it in go. The question was pretty easy, but it took me a long time since I'm new to go.
+Go's fun though.
+
+Day 23 -> Part 1 was easy while part 2 was somewhat challeging.
+          Figured out that there's several layers of loop but didn't piece it together.
+          Saw some hints and realized that I loop all numbers between a and b by the inner jump offset (17)
+          and increment h if it's prime.
+          Pretty fun though.
