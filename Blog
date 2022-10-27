@@ -6,6 +6,9 @@ Day 17 -> Part 1 was straight forward.
          Part 2, I tried to brute force it by optimizing a little.
          Then realized that you don't need the buffer at all and that you just need to keep track of the first value, saving time on expensive split operations.
 
+Day 22 -> A sort of cellular automata?
+          Fun!
+
 Day 23 -> Part 1 was easy while part 2 was somewhat challeging.
           Figured out that there's several layers of loop but didn't piece it together.
           Saw some hints and realized that I loop all numbers between a and b by the inner jump offset (17)
