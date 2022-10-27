@@ -2,6 +2,9 @@
 Day 1 -> Did it in go. The question was pretty easy, but it took me a long time since I'm new to go.
 Go's fun though.
 
+
+Day 15 -> Surprisingly easy. Huh.
+
 Day 17 -> Part 1 was straight forward.
          Part 2, I tried to brute force it by optimizing a little.
          Then realized that you don't need the buffer at all and that you just need to keep track of the first value, saving time on expensive split operations.
