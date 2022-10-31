@@ -10,6 +10,10 @@ Day 9 -> Simple problem that took me forever to get right.
 
 Day 10 -> Didn't think my answers were right but they were! Pretty fun puzzle!
 
+Day 14 -> Part 1 was easy, while part 2 was a bit challenging.
+          If you find all the set positions in the grid and recursively clear out it's neighbors, 
+          you end up with a really clean solution!
+
 Day 15 -> Surprisingly easy. Huh.
 
 Day 17 -> Part 1 was straight forward.
