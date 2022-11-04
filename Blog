@@ -27,6 +27,8 @@ Day 17 -> Part 1 was straight forward.
          Part 2, I tried to brute force it by optimizing a little.
          Then realized that you don't need the buffer at all and that you just need to keep track of the first value, saving time on expensive split operations.
 
+Day 19 -> Spent way more time than nessesary on part 1, then realized my mistake was a typo. For part 1 and 2 I had to literally comb through a log of the outputs to find the right answers. I'm sure there was some clever way to find the solutions, but honestly I'll settle for the fact that I at least got the right answers.
+
 Day 22 -> A sort of cellular automata?
           Fun!
 
