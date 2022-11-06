@@ -31,6 +31,8 @@ Day 14 -> Part 1 was easy, while part 2 was a bit challenging.
 
 Day 15 -> Surprisingly easy. Huh.
 
+Day 16 -> Patterns are amazing.
+
 Day 17 -> Part 1 was straight forward.
          Part 2, I tried to brute force it by optimizing a little.
          Then realized that you don't need the buffer at all and that you just need to keep track of the first value, saving time on expensive split operations.
