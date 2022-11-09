@@ -1,4 +1,4 @@
-listing = [i for i in open("inputs/day7-inputs.txt", "r").read().split("\n")]
+listing = [i for i in open("day7-inputs.txt", "r").read().split("\n")]
 
 prev = {}
 weights = {}

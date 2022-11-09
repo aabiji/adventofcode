@@ -1,4 +1,4 @@
-blocks = [int(i) for i in open("inputs/day6-inputs.txt", "r").read().split("\n")[0].split("\t")]
+blocks = [int(i) for i in open("day6-inputs.txt", "r").read().split("\n")[0].split("\t")]
 seen_before = []
 cycle_count = 0
 first_duplicate_cycle_count = 0

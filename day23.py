@@ -1,4 +1,4 @@
-inputs = open("inputs/day23-inputs.txt", "r").read().split("\n")
+inputs = open("day23-inputs.txt", "r").read().split("\n")
 
 # Part 1 -> How many times is the mul instruction called? Answer: 3969
 registers = {"a":0, "b":0, "c":0, "d":0, "e":0, "f":0, "g":0, "h":0}

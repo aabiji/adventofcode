@@ -1,5 +1,5 @@
 
-infection_map = open("inputs/day22-inputs.txt", "r").read().split("\n")
+infection_map = open("day22-inputs.txt", "r").read().split("\n")
 middle_x, middle_y = len(infection_map[0]) // 2, len(infection_map) // 2
 infections, current_node = {}, (0, 0)
 for y in range(len(infection_map)):

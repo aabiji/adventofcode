@@ -1,7 +1,7 @@
 # Part 1 : What's the value of the first sound recoverd? Answer: 3423
 # Part 2: Instructions now run in parallel, how many times does program 1 send? Answer: 7493
 
-instructions = open("inputs/day18-inputs.txt", "r").read().split("\n")
+instructions = open("day18-inputs.txt", "r").read().split("\n")
 
 def return_registers():
     registers = {}

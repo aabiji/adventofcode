@@ -1,4 +1,4 @@
-instructions = open("inputs/day8-inputs.txt", "r").read().split("\n")
+instructions = open("day8-inputs.txt", "r").read().split("\n")
 
 registers = {}
 highest_value_after, values = 0, []
