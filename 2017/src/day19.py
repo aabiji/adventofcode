@@ -1,4 +1,4 @@
-inputs = open("day19-inputs.txt", "r").read().split("\n")
+inputs = open("inputs/day19-inputs.txt", "r").read().split("\n")
 
 x, y = inputs[0].index("|"), 0
 direction = "d"

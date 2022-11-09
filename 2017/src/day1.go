@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-    data, _ := os.ReadFile("day1-inputs.txt")
+    data, _ := os.ReadFile("inputs/day1-inputs.txt")
     str := string(data)
 
     same_as_next := []int{}

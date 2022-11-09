@@ -1,4 +1,4 @@
-inputs = open("day20-inputs.txt", "r").read().split("\n")
+inputs = open("inputs/day20-inputs.txt", "r").read().split("\n")
 
 class Particle:
     def __init__(self, xyz, vel, acc, i):

@@ -1,7 +1,7 @@
 # Part 1 -> Total score of group? Answer: 10616
 # Part 2 -> Count of all the garbage? Answer: 5101
 
-stream = open("day9-inputs.txt", "r").read().rstrip()
+stream = open("inputs/day9-inputs.txt", "r").read().rstrip()
 
 i = 0
 depth, score, garbage_count = 0, 0, 0

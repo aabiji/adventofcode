@@ -57,7 +57,7 @@ func row_div(row []string) int {
 }
 
 func main() {
-    data, _ := os.ReadFile("day2-inputs.txt")
+    data, _ := os.ReadFile("inputs/day2-inputs.txt")
     spreadsheet := strings.Split(string(data), "\r\n")
     var checksum int = 0
 

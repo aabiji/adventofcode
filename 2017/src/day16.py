@@ -1,4 +1,4 @@
-moves = [i for i in open("day16-inputs.txt", "r").read().split("\n")[0].split(",")]
+moves = [i for i in open("inputs/day16-inputs.txt", "r").read().split("\n")[0].split(",")]
 
 dancers = list("abcdefghijklmnop")
 

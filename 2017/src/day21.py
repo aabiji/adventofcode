@@ -1,7 +1,7 @@
 # Part 1 -> How many squares are on after 5 iterations? Answer: 123
 # Part 2 -> Same thing, 18 iterations? Answer: 1984683
 
-lines = open("day21-inputs.txt", "r").read().split("\n")
+lines = open("inputs/day21-inputs.txt", "r").read().split("\n")
 cur = """.#./..#/###"""
 book = {}
 

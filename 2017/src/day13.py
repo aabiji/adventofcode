@@ -1,4 +1,4 @@
-recordings = open("day13-inputs.txt", "r").read().split("\n")
+recordings = open("inputs/day13-inputs.txt", "r").read().split("\n")
 
 # Part 1 : Severity of getting caught.
 # Part 2: Number of delays that the packet won't get caught? Answer: 3849742

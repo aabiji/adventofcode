@@ -1,4 +1,4 @@
-phrases = [i.split(" ") for i in open("day4-inputs.txt", "r").read().split("\n")]
+phrases = [i.split(" ") for i in open("inputs/day4-inputs.txt", "r").read().split("\n")]
 
 valid_count = 0
 for phrase in phrases:
