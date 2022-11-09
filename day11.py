@@ -1,4 +1,4 @@
-directions = [i for i in open("day11-inputs.txt", "r").read().split("\n")[0].split(",")]
+directions = [i for i in open("inputs/day11-inputs.txt", "r").read().split("\n")[0].split(",")]
 
 steps = {(0, 0):0}
 x, y = 0, 0

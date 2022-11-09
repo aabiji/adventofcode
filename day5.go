@@ -11,7 +11,7 @@ import (
 // Part 2 -> Same question, diffent rules. Answer: 25558839
 
 func main() {
-    file, _ := os.ReadFile("day5-inputs.txt")
+    file, _ := os.ReadFile("inputs/day5-inputs.txt")
     inputs := strings.Split(string(file), "\r\n")
     jump_offsets := []int{}
     for _, v := range inputs {

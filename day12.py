@@ -1,4 +1,4 @@
-inputs = open("day12-inputs.txt", "r").read().split("\n")
+inputs = open("inputs/day12-inputs.txt", "r").read().split("\n")
 
 # A component graph
 import networkx
