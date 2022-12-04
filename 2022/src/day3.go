@@ -31,7 +31,6 @@ func main() {
 		}
 		matches = append(matches, match)
 	}
-
 	/*
 	// Part 1
 	for _, v := range inputs {
