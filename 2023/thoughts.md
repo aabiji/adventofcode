@@ -4,3 +4,8 @@ the test inputs, but it was still pretty easy.
 I solved it sliding a window over the line
 and using regex to find matches within that window.
 The problem also nicely generalizes too.
+
+# Day 2
+Was really confused about the requirements. Did the rules apply per set or per game? (It was per set)
+My answer kept being too low, kind of frustrating to be honest.
+Maybe I'm just stupid or rusty, but I feel like the year's a lot more involed.

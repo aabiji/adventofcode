@@ -1,12 +1,9 @@
 use regex::Regex;
 use std::collections::HashMap;
 
-fn main() {
-    let file_contents = std::fs::read_to_string("../inputs/day1.txt").unwrap();
-    let inputs = file_contents.lines();
-
-    let part = 2;
-    let mut answer = 0;
+pub fn compute_puzzle(part: u32) -> i32 {
+    let inputs = crate::utils::read_inputs("inputs/day1.txt");
+    let mut answer: i32 = 0;
 
     let mut pattern = String::from("[0-9]");
     let numbers = HashMap::from([
@@ -50,8 +47,8 @@ fn main() {
 
 
         let score = (first_match.parse::<u32>().unwrap() * 10) + last_match.parse::<u32>().unwrap();
-        answer += score;
+        answer += score as i32;
      }
 
-    println!("{}", answer);
+     answer
 }
