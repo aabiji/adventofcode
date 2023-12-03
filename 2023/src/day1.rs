@@ -2,7 +2,7 @@ use regex::Regex;
 use std::collections::HashMap;
 
 pub fn compute_puzzle(part: u32) -> i32 {
-    let inputs = crate::utils::read_inputs("inputs/day1.txt");
+    let inputs = crate::utils::read_input_file("inputs/day1.txt");
     let mut answer: i32 = 0;
 
     let mut pattern = String::from("[0-9]");
