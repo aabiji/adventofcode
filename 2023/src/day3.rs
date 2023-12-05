@@ -45,7 +45,6 @@ fn get_surrounding_numbers(matrix: &Vec<String>, x: usize, y: usize) -> (i32, i3
         let right = search_number(matrix, x + 1, i, Direction::Right);
         let full = &(left.clone() + &c.to_string() + &right);
 
-        // TODO: figure out adjacency counts
         if left.len() > 0 {
             adjacency_count += 1;
         }
