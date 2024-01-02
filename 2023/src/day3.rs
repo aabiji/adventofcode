@@ -1,98 +1,92 @@
 
-#[derive(PartialEq)]
-enum Direction { Left, Right }
-
-fn search_number(matrix: &Vec<String>, x: usize, y: usize, dir: Direction) -> String {
-    let mut i = x as i32;
-    let row_len = matrix[y].len() as i32;
-    let mut result = String::new();
-    let mut c = matrix[y].chars().nth(x).unwrap();
-
-    while i >= 0 && i < row_len && !c.is_ascii_punctuation() {
-        result += &c.to_string();
-
-        if dir == Direction::Left { i -= 1; } else { i += 1; };
-        if i < 0 || i == row_len { break; }
-
-        c = matrix[y].chars().nth(i as usize).unwrap();
+fn in_bounds(x: i32, y: i32, w: usize, h: usize) -> bool {
+    if x < 0 || x as usize >= w {
+        return false;
     }
 
-    if dir == Direction::Left {
-        result = result.chars().rev().collect();
+    if y < 0 || y as usize >= h {
+        return false;
     }
 
-    result
+    return true;
 }
 
-fn str_to_int(string: &str) -> i32 {
-    match string.parse::<i32>() {
-        Ok(val) => val,
-        Err(_) => 0
+fn scan_num(grid: &Vec<String>, x: i32, y: i32) -> Option<u32> {
+    if !in_bounds(x, y, grid.len(), grid[y as usize].len()) {
+        return None;
+    }
+
+    let mut i = x - 1;
+    let mut left_num_str = String::new();
+    while in_bounds(i, y, grid.len(), grid[y as usize].len()) {
+        let c = grid[y as usize].chars().nth(i as usize).unwrap();
+        if !c.is_digit(10) {
+            break;
+        }
+        left_num_str += &format!("{}", c);
+        i -= 1;
+    }
+
+    i = x + 1;
+    let mut right_num_str = String::new();
+    while in_bounds(i, y, grid.len(), grid[y as usize].len()) {
+        let c = grid[y as usize].chars().nth(i as usize).unwrap();
+        if !c.is_digit(10) {
+            break;
+        }
+        right_num_str += &format!("{}", c);
+        i += 1;
+    }
+
+    left_num_str = left_num_str.chars().rev().collect::<String>();
+    let num_str = format!("{}{}{}", left_num_str, grid[y as usize].chars().nth(x as usize).unwrap(), right_num_str);
+ 
+    if let Ok(n) = num_str.parse::<u32>() {
+        return Some(n);
+    }
+
+    return None;
+}
+
+fn find_adjacent_nums(grid: &Vec<String>, x: i32, y: i32) -> u32 {
+    let mut nums: Vec<u32> = Vec::new();
+
+    for line in y-1..y+2 {
+        if let Some(n) = scan_num(&grid, x, line) {
+            nums.push(n);
+            continue;
+        }
+
+        if let Some(n) = scan_num(&grid, x - 1, line) { 
+            nums.push(n);
+        }
+
+        if let Some(n) = scan_num(&grid, x + 1, line) {
+            nums.push(n);
+        }
+    }
+
+    // part 1: return nums.iter().sum();
+    if nums.len() == 2 {
+        return nums[0] * nums[1];
+    } else {
+        return 0;
     }
 }
 
-fn get_surrounding_numbers(matrix: &Vec<String>, x: usize, y: usize) -> (i32, i32) {
-    let start_y = if y > 0 { y - 1 } else { 0 };
-    let end_y = if y < matrix.len() { y + 1 } else { y };
+pub fn compute_puzzle(_part: i32) -> u32 {
+    let lines = crate::utils::read_input_file("inputs/day3.txt");
+    let mut total = 0;
 
-    let mut sum = 0;
-    let mut ratio = 1;
-    let mut adjacency_count = 0;
-
-    for i in start_y..=end_y {
-        let c = matrix[i].chars().nth(x).unwrap();
-        let left  = search_number(matrix, x - 1, i, Direction::Left);
-        let right = search_number(matrix, x + 1, i, Direction::Right);
-        let full = &(left.clone() + &c.to_string() + &right);
-
-        if left.len() > 0 {
-            adjacency_count += 1;
-        }
-        if right.len() > 0 {
-            adjacency_count += 1;
-        }
-
-        if i != y && c == '.' || y == i {
-            let lval = str_to_int(&left);
-            let rval = str_to_int(&right);
-            sum += lval + rval;
-
-            if lval > 0 { ratio *= lval }
-            if rval > 0 { ratio *= rval }
-        } else {
-            let num = str_to_int(full);
-            sum += num;
-
-            if num > 0 { ratio *= num }
-        }
-    }
-
-    println!("{} {} {}", matrix[y].chars().nth(x).unwrap(), ratio, adjacency_count);
-
-    if adjacency_count != 2 {
-        ratio = 0
-    }
-    (ratio, sum)
-}
-
-// get all the symbols, then find all the surrounding numbers
-pub fn compute_puzzle(part: i32) -> i32 {
-    let inputs = crate::utils::read_input_file("inputs/day3.txt");
-    let mut answer = 0;
-
-    let mut y = 0;
-    for line in &inputs {
-        let mut x = 0;
-        while x < line.len() {
-            let c = line.chars().nth(x).unwrap();
-            if c.is_ascii_punctuation() && c != '.' {
-                let (ratio, sum) = get_surrounding_numbers(&inputs, x, y);
-                answer += if part == 1 { sum } else { ratio }
+    for y in 0..lines.len() {
+        for x in 0..lines[y].len() {
+            let c = lines[y].chars().nth(x).unwrap();
+            if c == '*' { // part 1: c.is_punctuation() && c != '.'
+                let n = find_adjacent_nums(&lines, x as i32, y as i32);
+                total += n;
             }
-            x += 1;
         }
-        y += 1;
     }
 
-    answer
+    return total; 
 }

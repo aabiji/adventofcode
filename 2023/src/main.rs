@@ -7,6 +7,6 @@ mod day4;
 mod utils;
 
 fn main() {
-    let answer = day4::compute_puzzle(1);
+    let answer = day3::compute_puzzle(1);
     println!("{}", answer);
 }
