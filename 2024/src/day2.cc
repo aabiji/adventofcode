@@ -2,9 +2,7 @@
 
 #include "lib.h"
 
-using namespace std;
-
-bool valid_sequence(vector<string> nums) {
+bool valid_sequence(std::vector<std::string> nums) {
     int first_diff = to_int(nums[0]) - to_int(nums[1]);
 
     // Get the indexes of the wrong numbers
@@ -20,19 +18,19 @@ bool valid_sequence(vector<string> nums) {
 }
 
 int main() {
-    string file = read_file("inputs/day2.txt");
-    vector<string> lines = split(file, "\n");
+    std::string file = read_file("inputs/day2.txt");
+    std::vector<std::string> lines = split(file, "\n");
     int safe_count = 0; // Number of reports that are safe
 
-    for (string line : lines) {
+    for (std::string line : lines) {
         if (line.size() == 0) continue;
-        vector<string> nums = split(line, " ");
+        std::vector<std::string> nums = split(line, " ");
         bool safe = false;
         if (valid_sequence(nums)) {
             safe = true;
         } else {
             for (int i = 0; i < nums.size(); i++) {
-                vector<string> copy = nums;
+                std::vector<std::string> copy = nums;
                 copy.erase(copy.begin() + i);
                 if (valid_sequence(copy)) {
                     safe = true;

@@ -5,3 +5,5 @@ Day 2: First part was trivial. Struggled with the second part. I thought
        taken out, but really the question was asking if you had any number
        of valid sequences with a number taken out. So the problem wasn't actually
        hard, I just misunderstood it.
+
+Day 3: Felt a bit too easy -- basically just basic regex
