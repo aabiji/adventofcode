@@ -3,16 +3,25 @@
 #include <fstream>
 #include <vector>
 
+std::string trim(std::string& str) {
+    std::string copy = str;
+    copy.erase(0, str.find_first_not_of("\n\r\v\f\r ")); // Left trim
+    copy.erase(str.find_last_not_of("\n\r\v\f\r ") + 1); // Right trim
+    return copy;
+}
+
 // Split a std::string with the delimeter
 std::vector<std::string> split(std::string str, std::string delim) {
-    std::vector<std::string> parts;
     size_t pos = 0;
+    std::vector<std::string> parts;
     while ((pos = str.find(delim)) != std::string::npos) {
         std::string part = str.substr(0, pos);
-        parts.push_back(part);
         str.erase(0, pos + delim.length());
+        if (trim(part).length() > 0)
+            parts.push_back(part);
     }
-    parts.push_back(str);
+    if (trim(str).length() > 0)
+        parts.push_back(str);
     return parts;
 }
 
