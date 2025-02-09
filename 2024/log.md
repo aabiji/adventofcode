@@ -7,3 +7,7 @@ Day 2: First part was trivial. Struggled with the second part. I thought
        hard, I just misunderstood it.
 
 Day 3: Felt a bit too easy -- basically just basic regex
+
+Day 4: Pretty easy
+
+Day 5: Interesting puzzle -- I liked it. I have a creeping suspicion that my solutions aren't the most efficient though.
