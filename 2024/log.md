@@ -13,3 +13,5 @@ Day 4: Pretty easy
 Day 5: Interesting puzzle -- I liked it. I have a creeping suspicion that my solutions aren't the most efficient though.
 
 Day 6: Part 1 was simple. Part 2 wasn't -- just ended up brute forcing the solution. There's got to be a better way though -- the problem is obviously a graph problem.
+
+Day 7: The problem was just a simple recursion problem to find all possible configurations of a sequence. My initial algorithm *was* correct, but integer overflowing was my problem. Using `unsigned long long` and `strtol` solved the overflowing problem.

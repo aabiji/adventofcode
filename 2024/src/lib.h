@@ -3,6 +3,11 @@
 #include <fstream>
 #include <vector>
 
+long long to_int(std::string str) {
+    char* end;
+    return strtol(str.c_str(), &end, 10);
+}
+
 std::string trim(std::string& str) {
     std::string copy = str;
     copy.erase(0, str.find_first_not_of("\n\r\v\f\r ")); // Left trim
@@ -25,15 +30,16 @@ std::vector<std::string> split(std::string str, std::string delim) {
 }
 
 // Split a string with the delimeter into a list of numbers
-std::vector<int> split_num(std::string str, std::string delim) {
+template <typename T>
+std::vector<T> split_num(std::string str, std::string delim) {
     size_t pos = 0;
-    std::vector<int> nums;
+    std::vector<T> nums;
     while ((pos = str.find(delim)) != std::string::npos) {
         std::string part = str.substr(0, pos);
         str.erase(0, pos + delim.length());
-        nums.push_back(atoi(part.c_str()));
+        nums.push_back(static_cast<T>(to_int(part)));
     }
-    nums.push_back(atoi(str.c_str()));
+    nums.push_back(static_cast<T>(to_int(str)));
     return nums;
 }
 
@@ -45,8 +51,4 @@ std::string read_file(std::string path) {
         contents += line + "\n";
     }
     return contents;
-}
-
-int to_int(std::string str) {
-    return atoi(str.c_str());
 }

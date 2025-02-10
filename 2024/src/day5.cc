@@ -18,7 +18,7 @@ int main() {
       list_start_index = i;
       break;
     }
-    std::vector<int> nums = split_num(line, "|");
+    std::vector<int> nums = split_num<int>(line, "|");
     before[nums[1]].push_back(nums[0]);
   }
 
@@ -28,7 +28,7 @@ int main() {
   // Part 1: Get the sum of the median of the sequences that are ordered correctly
   for (int i = list_start_index + 1; i < lines.size(); i++) {
     std::string line = lines[i];
-    std::vector<int> nums = split_num(line, ",");
+    std::vector<int> nums = split_num<int>(line, ",");
     bool valid_sequence = true;
 
     for (int j = 0; j < nums.size(); j++) {
@@ -55,7 +55,7 @@ int main() {
   // Part 2: Correct the incorrectly ordered sequences and get the sum of their median
   for (int i = list_start_index + 1; i < lines.size(); i++) {
     std::string line = lines[i];
-    std::vector<int> nums = split_num(line, ",");
+    std::vector<int> nums = split_num<int>(line, ",");
     bool valid_sequence = true;
     
     for (int j = 0; j < nums.size(); j++) {
