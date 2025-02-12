@@ -15,3 +15,5 @@ Day 5: Interesting puzzle -- I liked it. I have a creeping suspicion that my sol
 Day 6: Part 1 was simple. Part 2 wasn't -- just ended up brute forcing the solution. There's got to be a better way though -- the problem is obviously a graph problem.
 
 Day 7: The problem was just a simple recursion problem to find all possible configurations of a sequence. My initial algorithm *was* correct, but integer overflowing was my problem. Using `unsigned long long` and `strtol` solved the overflowing problem.
+
+Day 8: Initially I did not understand what the question. It took a while to actually understand the criteria that defines an antinode.
