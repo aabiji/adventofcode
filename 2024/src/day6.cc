@@ -16,8 +16,7 @@ struct vec2_hasher {
 };
 
 int main() {
-  std::string file = read_file("inputs/day6.txt");
-  std::vector<std::string> lines = split(file, "\n");
+  std::vector<std::string> lines = read_lines("inputs/day6.txt");
 
   int width = lines[0].length();
   int height = lines.size();

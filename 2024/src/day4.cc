@@ -4,8 +4,7 @@
 #include "lib.h"
 
 int main() {
-    std::string file = read_file("inputs/day4.txt");
-    std::vector<std::string> lines = split(file, "\n");
+    std::vector<std::string> lines = read_lines("inputs/day4.txt");
     int width = lines[0].size();
     int height = lines.size();
 

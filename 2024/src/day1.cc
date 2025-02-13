@@ -10,8 +10,7 @@ bool comp(int a, int b) {
 }
 
 int main() {
-    std::string file = read_file("inputs/day1.txt");
-    std::vector<std::string> lines = split(file, "\n");
+    std::vector<std::string> lines = read_lines("inputs/day1.txt");
 
     // Left and right columns of numbers
     std::vector<int> left = {};

@@ -20,8 +20,7 @@ bool eval(std::vector<u64> &nums, u64 target, u64 current, int i, int &count) {
 }
 
 int main() {
-  std::string file = read_file("inputs/day7.txt");
-  std::vector<std::string> lines = split(file, "\n");
+  std::vector<std::string> lines = read_lines("inputs/day7.txt");
 
   u64 result = 0;
   for (std::string line : lines) {

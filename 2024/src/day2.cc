@@ -18,8 +18,7 @@ bool valid_sequence(std::vector<std::string> nums) {
 }
 
 int main() {
-    std::string file = read_file("inputs/day2.txt");
-    std::vector<std::string> lines = split(file, "\n");
+    std::vector<std::string> lines = read_lines("inputs/day2.txt");
     int safe_count = 0; // Number of reports that are safe
 
     for (std::string line : lines) {

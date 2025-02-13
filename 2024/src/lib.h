@@ -52,3 +52,7 @@ std::string read_file(std::string path) {
     }
     return contents;
 }
+
+std::vector<std::string> read_lines(std::string path) {
+    return split(read_file(path), "\n");
+}

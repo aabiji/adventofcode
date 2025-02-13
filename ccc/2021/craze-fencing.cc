@@ -20,11 +20,11 @@ int main() {
     widths.push_back(j);
   }
 
-  float sum = 0;
+  double sum = 0;
   for (int i = 0; i < count; i++) {
-    float x = (float)heights[i];
-    float y = (float)heights[i + 1];
-    float w = (float)widths[i];
+    double x = (double)heights[i];
+    double y = (double)heights[i + 1];
+    double w = (double)widths[i];
     sum += (w * (x + y) / 2);
   }
 

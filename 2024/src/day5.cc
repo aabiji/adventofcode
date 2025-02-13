@@ -4,8 +4,7 @@
 #include "lib.h"
 
 int main() {
-  std::string file = read_file("inputs/day5.txt");
-  std::vector<std::string> lines = split(file, "\n");
+  std::vector<std::string> lines = read_file("inputs/day5.txt");
   int list_start_index = 0;
 
   // Map a number to a list of numbers that could come before it

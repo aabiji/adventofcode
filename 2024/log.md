@@ -16,4 +16,4 @@ Day 6: Part 1 was simple. Part 2 wasn't -- just ended up brute forcing the solut
 
 Day 7: The problem was just a simple recursion problem to find all possible configurations of a sequence. My initial algorithm *was* correct, but integer overflowing was my problem. Using `unsigned long long` and `strtol` solved the overflowing problem.
 
-Day 8: Initially I did not understand what the question. It took a while to actually understand the criteria that defines an antinode.
+Day 8: The question is really confusing. It doesn't make any actual sense. Slightly frustrating at first but I eventually figured out what the question was asking and the solution was really simple.
