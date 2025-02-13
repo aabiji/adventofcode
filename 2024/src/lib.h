@@ -34,6 +34,14 @@ template <typename T>
 std::vector<T> split_num(std::string str, std::string delim) {
     size_t pos = 0;
     std::vector<T> nums;
+
+    if (delim.length() == 0) {
+        for (int i = 0; i < str.length() - 1; i++) {
+            nums.push_back(to_int(str.substr(i, 1)));
+        }
+        return nums;
+    }
+
     while ((pos = str.find(delim)) != std::string::npos) {
         std::string part = str.substr(0, pos);
         str.erase(0, pos + delim.length());
