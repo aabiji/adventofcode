@@ -1,6 +1,4 @@
-#include <iostream>
 #include <tuple>
-
 #include "lib.h"
 
 int main() {

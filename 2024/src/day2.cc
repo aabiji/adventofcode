@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "lib.h"
 
 bool valid_sequence(std::vector<std::string> nums) {

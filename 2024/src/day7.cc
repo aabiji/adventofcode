@@ -1,4 +1,3 @@
-#include <iostream>
 #include "lib.h"
 
 typedef unsigned long long u64;

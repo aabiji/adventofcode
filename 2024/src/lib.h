@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fstream>
+#include <iostream>
 #include <vector>
 
 long long to_int(std::string str) {
@@ -63,4 +64,15 @@ std::string read_file(std::string path) {
 
 std::vector<std::string> read_lines(std::string path) {
     return split(read_file(path), "\n");
+}
+
+// Output a list of numbers in rows
+template <typename T>
+void print_list(std::vector<T> nums, int row_size = 20) {
+    for (int i = 0; i < nums.size(); i++) {
+      if (i > 0 && i % row_size == 0)
+        std::cout << "\n";
+      std::cout << nums[i] << " ";
+    }
+    std::cout << "\n";
 }
