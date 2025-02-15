@@ -9,6 +9,11 @@ long long to_int(std::string str) {
     return strtol(str.c_str(), &end, 10);
 }
 
+long long to_int(char c) {
+    char* end;
+    return strtol(std::to_string(c).c_str(), &end, 10);
+}
+
 std::string trim(std::string& str) {
     std::string copy = str;
     copy.erase(0, str.find_first_not_of("\n\r\v\f\r ")); // Left trim

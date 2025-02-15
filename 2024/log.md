@@ -17,3 +17,7 @@ Day 6: Part 1 was simple. Part 2 wasn't -- just ended up brute forcing the solut
 Day 7: The problem was just a simple recursion problem to find all possible configurations of a sequence. My initial algorithm *was* correct, but integer overflowing was my problem. Using `unsigned long long` and `strtol` solved the overflowing problem.
 
 Day 8: The question is really confusing. It doesn't make any actual sense. Slightly frustrating at first but I eventually figured out what the question was asking and the solution was really simple.
+
+Day 9: Interesting problem. Took a lot of tries to get right. Decided to completely change my approach for part 2.
+
+Day 10: My solution to the problem was so satisfying. Like it's basically just depth first search but with extra rules
