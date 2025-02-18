@@ -1,18 +1,4 @@
-#include <unordered_map>
 #include "lib.h"
-
-struct vec2 {
-  int x; int y;
-  bool operator==(const vec2 &other) const {
-    return x == other.x && y == other.y;
-  }
-};
-
-struct vec2_hasher {
-  size_t operator()(const vec2 &p) const {
-    return std::hash<int>()(p.x) ^ (std::hash<int>()(p.y) << 1);
-  }
-};
 
 int main() {
   std::vector<std::string> lines = read_lines("inputs/day6.txt");
@@ -35,7 +21,7 @@ int main() {
   vec2 pos = player;
   int i = 0; // direction
   int steps = 0;
-  std::unordered_map<vec2, bool, vec2_hasher> path;
+  std::unordered_map<vec2, bool> path;
   vec2 directions[] = { {0, -1}, {1, 0}, {0, 1}, {-1, 0} };
 
   while (pos.x >= 0 && pos.x < width && pos.y >= 0 && pos.y < height) {

@@ -1,7 +1,4 @@
-#include <unordered_map>
 #include "lib.h"
-
-struct vec2 { int x; int y; };
 
 int main() {
   std::vector<std::string> lines = read_lines("inputs/day8.txt");

@@ -23,3 +23,5 @@ Day 9: Interesting problem. Took a lot of tries to get right. Decided to complet
 Day 10: My solution to the problem was so satisfying. Like it's basically just depth first search but with extra rules
 
 Day 11: For the first part I was surprised that brute forcing was fast enough. The second part is a caching problem. Hashmaps to the rescue yet again.
+
+Day 12: After some frustrating debugging I realize that when using breath first search, we need to mark the neighbor as visited *before* we visit it. Part 2 was fun to solve though.

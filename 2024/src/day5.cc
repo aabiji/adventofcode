@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <unordered_map>
 #include "lib.h"
 
 int main() {
@@ -55,7 +54,7 @@ int main() {
     std::string line = lines[i];
     std::vector<int> nums = split_num<int>(line, ",");
     bool valid_sequence = true;
-    
+
     for (int j = 0; j < nums.size(); j++) {
       std::vector<int>& nums_before = before[nums[j]];
       if (nums_before.empty())

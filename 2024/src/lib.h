@@ -1,8 +1,10 @@
 #pragma once
 
+#include <cmath>
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 long long to_int(std::string str) {
   char* end;
@@ -10,8 +12,17 @@ long long to_int(std::string str) {
 }
 
 long long to_int(char c) {
-  char* end;
-  return strtol(std::to_string(c).c_str(), &end, 10);
+  return to_int(std::to_string(c));
+}
+
+// Output a list of numbers in rows
+template <typename T>
+void print_list(std::vector<T> nums, int row_size = 20) {
+  for (int i = 0; i < nums.size(); i++) {
+    if (i > 0 && i % row_size == 0) std::cout << "\n";
+    std::cout << nums[i] << " ";
+  }
+  std::cout << "\n";
 }
 
 std::string trim(std::string& str) {
@@ -76,12 +87,22 @@ std::vector<std::string> read_lines(std::string path) {
   return split(read_file(path), "\n");
 }
 
-// Output a list of numbers in rows
-template <typename T>
-void print_list(std::vector<T> nums, int row_size = 20) {
-  for (int i = 0; i < nums.size(); i++) {
-    if (i > 0 && i % row_size == 0) std::cout << "\n";
-    std::cout << nums[i] << " ";
+struct vec2 {
+  int x, y;
+  vec2(int _x, int _y) { x = _x; y = _y; }
+
+  bool operator==(const vec2& other) const {
+    return x == other.x && y == other.y;
   }
-  std::cout << "\n";
-}
+
+  bool operator<(const vec2& other) const {
+    return x < other.x || (x == other.x && y < other.y);
+  }
+};
+
+template <>
+struct std::hash<vec2> {
+  size_t operator()(const vec2& v) const noexcept {
+    return std::hash<int>()(v.x) ^ (std::hash<int>()(v.y) << 1);
+  }
+};

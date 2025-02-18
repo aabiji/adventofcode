@@ -1,5 +1,4 @@
 #include "lib.h"
-#include <unordered_map>
 
 int main() {
   std::string file = read_file("inputs/day11.txt");

@@ -1,5 +1,4 @@
 #include "lib.h"
-#include <unordered_map>
 
 // Part 1: Count the number of '9' height positions from the current trailhead
 // Part 2: Count the numbe of ways you could reach the '9 height position
