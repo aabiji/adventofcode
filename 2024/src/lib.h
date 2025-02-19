@@ -17,7 +17,7 @@ long long to_int(char c) {
 
 // Output a list of numbers in rows
 template <typename T>
-void print_list(std::vector<T> nums, int row_size = 20) {
+void print_nums(std::vector<T> nums, int row_size = 20) {
   for (int i = 0; i < nums.size(); i++) {
     if (i > 0 && i % row_size == 0) std::cout << "\n";
     std::cout << nums[i] << " ";
