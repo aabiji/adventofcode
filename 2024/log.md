@@ -26,4 +26,4 @@ Day 11: For the first part I was surprised that brute forcing was fast enough. T
 
 Day 12: After some frustrating debugging I realize that when using breath first search, we need to mark the neighbor as visited *before* we visit it. Part 2 was fun to solve though.
 
-Day 13: Basically just solving a system of equations. Struggling to get the right answer for part 2.
+Day 13: Basically just solving a system of equations. Struggled to answer part 2 because I wasn't checking if *both* x and y were valid integers.

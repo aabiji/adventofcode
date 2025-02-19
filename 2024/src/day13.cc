@@ -1,6 +1,13 @@
 #include "lib.h"
 #include <sstream>
 
+bool is_integer(double x) {
+  std::stringstream ss;
+  ss << std::fixed << x;
+  std::string fraction = ss.str().substr(ss.str().find(".") + 1, 6);
+  return fraction == "000000";
+}
+
 int main() {
   std::vector<std::string> lines = read_lines("inputs/day13.txt");
 
@@ -19,8 +26,8 @@ int main() {
     }
 
     // Part 2
-    //nums[4] += 10000000000000;
-    //nums[5] += 10000000000000;
+    nums[4] += 10000000000000;
+    nums[5] += 10000000000000;
 
     // Solve the system of equations
     long double a = nums[0], b = nums[2], c = nums[1], d = nums[3];
@@ -29,15 +36,8 @@ int main() {
     long double x = matrix[0] * nums[4] + matrix[1] * nums[5];
     long double y = matrix[2] * nums[4] + matrix[3] * nums[5];
 
-    // Is it a valid solution (int x and y)?
-    std::stringstream ss;
-    ss << std::fixed << x;
-    ss << " ";
-    ss << std::fixed << y;
-    std::string fraction = ss.str().substr(ss.str().find(".") + 1, 6);
-
     // Add the minimum cost
-    if (x >= 0 && y >= 0 && fraction == "000000")
+    if (x >= 0 && y >= 0 && is_integer(x) && is_integer(y))
       total_cost += x * 3 + y;
   }
 
