@@ -90,6 +90,7 @@ std::vector<std::string> read_lines(std::string path) {
 struct vec2 {
   int x, y;
   vec2(int _x, int _y) { x = _x; y = _y; }
+  vec2() { x = 0; y = 0; }
 
   bool operator==(const vec2& other) const {
     return x == other.x && y == other.y;

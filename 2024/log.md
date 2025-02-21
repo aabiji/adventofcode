@@ -27,3 +27,5 @@ Day 11: For the first part I was surprised that brute forcing was fast enough. T
 Day 12: After some frustrating debugging I realize that when using breath first search, we need to mark the neighbor as visited *before* we visit it. Part 2 was fun to solve though.
 
 Day 13: Basically just solving a system of equations. Struggled to answer part 2 because I wasn't checking if *both* x and y were valid integers.
+
+Day 14: Part 1 was trivial. Part 2 was more of an open problem so I cheated a bit and quickly figured the one with the christmas tree is the one with the minimum safety. I would prefer a less open problem.
