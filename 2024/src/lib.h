@@ -3,32 +3,30 @@
 #include <cmath>
 #include <fstream>
 #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 long long to_int(std::string str) {
-  char* end;
+  char *end;
   return strtol(str.c_str(), &end, 10);
 }
 
-long long to_int(char c) {
-  return to_int(std::to_string(c));
-}
+long long to_int(char c) { return to_int(std::to_string(c)); }
 
 // Output a list of numbers in rows
-template <typename T>
-void print_nums(std::vector<T> nums, int row_size = 20) {
+template <typename T> void print_nums(std::vector<T> nums, int row_size = 20) {
   for (int i = 0; i < nums.size(); i++) {
-    if (i > 0 && i % row_size == 0) std::cout << "\n";
+    if (i > 0 && i % row_size == 0)
+      std::cout << "\n";
     std::cout << nums[i] << " ";
   }
   std::cout << "\n";
 }
 
-std::string trim(std::string& str) {
+std::string trim(std::string &str) {
   std::string copy = str;
-  copy.erase(0, str.find_first_not_of("\n\r\v\f\r "));  // Left trim
-  copy.erase(str.find_last_not_of("\n\r\v\f\r ") + 1);  // Right trim
+  copy.erase(0, str.find_first_not_of("\n\r\v\f\r ")); // Left trim
+  copy.erase(str.find_last_not_of("\n\r\v\f\r ") + 1); // Right trim
   return copy;
 }
 
@@ -47,7 +45,8 @@ std::vector<std::string> split(std::string str, std::string delim) {
     str.erase(0, pos + delim.length());
     parts.push_back(part);
   }
-  if (trim(str).length() > 0) parts.push_back(str);
+  if (trim(str).length() > 0)
+    parts.push_back(str);
   return parts;
 }
 
@@ -89,21 +88,49 @@ std::vector<std::string> read_lines(std::string path) {
 
 struct vec2 {
   int x, y;
-  vec2(int _x, int _y) { x = _x; y = _y; }
-  vec2() { x = 0; y = 0; }
 
-  bool operator==(const vec2& other) const {
+  vec2(int _x, int _y) {
+    x = _x;
+    y = _y;
+  }
+
+  vec2() {
+    x = 0;
+    y = 0;
+  }
+
+  bool operator==(const vec2 &other) const {
     return x == other.x && y == other.y;
   }
 
-  bool operator<(const vec2& other) const {
+  bool operator!=(const vec2 &other) const {
+    return x != other.x || y != other.y;
+  }
+
+  bool operator<(const vec2 &other) const {
     return x < other.x || (x == other.x && y < other.y);
+  }
+
+  vec2 &operator+=(const vec2 &rhs) {
+    x += rhs.x;
+    y += rhs.y;
+    return *this;
+  }
+
+  friend vec2 operator+(vec2 lhs, const vec2 &rhs) {
+    lhs += rhs;
+    return lhs;
+  }
+
+  friend vec2 operator-(vec2 lhs, const vec2 &rhs) {
+    lhs.x -= rhs.x;
+    lhs.y -= rhs.y;
+    return lhs;
   }
 };
 
-template <>
-struct std::hash<vec2> {
-  size_t operator()(const vec2& v) const noexcept {
+template <> struct std::hash<vec2> {
+  size_t operator()(const vec2 &v) const noexcept {
     return std::hash<int>()(v.x) ^ (std::hash<int>()(v.y) << 1);
   }
 };
