@@ -26,7 +26,9 @@ template <typename T> void print_nums(std::vector<T> nums, int row_size = 20) {
 std::string trim(std::string &str) {
   std::string copy = str;
   copy.erase(0, str.find_first_not_of("\n\r\v\f\r ")); // Left trim
-  copy.erase(str.find_last_not_of("\n\r\v\f\r ") + 1); // Right trim
+  int last = str.find_last_not_of("\n\r\v\f\r ") + 1;
+  if (last < copy.length())
+    copy.erase(last); // Right trim
   return copy;
 }
 
